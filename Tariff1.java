@@ -1,9 +1,9 @@
 abstract public class Tariff1 implements Tariff{
     private String name;
-    private int internetGB;
+    private double internetGB;
     private String addInfo;
-    private int minInNetwork;
-    private int minOutNetwork;
+    private double minInNetwork;
+    private double minOutNetwork;
     private double monthlyPayment;
     private double initialPayment;
 
@@ -15,7 +15,7 @@ abstract public class Tariff1 implements Tariff{
         this.name=name;
     }
 
-    public int getInternetGB(){
+    public double getInternetGB(){
         return internetGB;
     }
 
@@ -31,7 +31,7 @@ abstract public class Tariff1 implements Tariff{
         this.addInfo=addInfo;
     }
 
-    public int getMinInNetwork(){
+    public double getMinInNetwork(){
         return minInNetwork;
     }
 
@@ -39,7 +39,7 @@ abstract public class Tariff1 implements Tariff{
         this.minInNetwork=minInNetwork;
     }
 
-    public int getMinOutNetwork(){
+    public double getMinOutNetwork(){
         return minOutNetwork;
     }
 

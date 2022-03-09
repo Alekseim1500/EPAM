@@ -3,7 +3,7 @@ public interface Tariff {
 
     void setName(String name);
 
-    int getInternetGB();
+    double getInternetGB();
 
     void setInternetGB(int internetGB);
 
@@ -11,11 +11,11 @@ public interface Tariff {
 
     void setAddInfo(String addInfo);
 
-    int getMinInNetwork();
+    double getMinInNetwork();
 
     void setMinInNetwork(int minInNetwork);
 
-    int getMinOutNetwork();
+    double getMinOutNetwork();
 
     void setMinOutNetwork(int minOutNetwork);
 

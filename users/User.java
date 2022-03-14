@@ -1,3 +1,8 @@
+package users;
+
+
+import tariffs.Tariff;
+
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -6,7 +11,7 @@ public class User {
     private Date DOB;
     private String address;
     private ArrayList<Tariff> tariffs;
-    private double monthPayment=0;
+    private double monthPayment = 0;
 
     public User(String name, Date DOB, String address) {
         this.name = name;
@@ -58,10 +63,10 @@ public class User {
         this.monthPayment = monthPayment;
     }
 
-    public double getMonthPayment(){
-        monthPayment=0;
-        for(Tariff tariff : tariffs) {
-            monthPayment+=tariff.getMonthlyPayment();
+    public double getMonthPayment() {
+        monthPayment = 0;
+        for (Tariff tariff : tariffs) {
+            monthPayment += tariff.getMonthlyPayment();
         }
         return monthPayment;
     }

@@ -1,3 +1,5 @@
+package tariffs;
+
 public interface Tariff {
     double getMonthlyPayment();
 

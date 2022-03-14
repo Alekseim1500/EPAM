@@ -1,51 +1,24 @@
-public class DefaultTariff extends Tariff1 {
-    private String name;
-    private double internetGB;
-    private String addInfo;
-    private double minInNetwork;
-    private double minOutNetwork;
-    private double monthlyPayment;
-    private double initialPayment;
-    final double POSITIVE_INFINITY = 1.0 / 0.0;
+public class DefaultTariff extends AbstractTariff {
+
+    private double monthlyPayment=0;
 
 
-    public DefaultTariff(String name, double internetGB, String addInfo, double minInNetwork, double minOutNetwork, double initialPayment) {
-        this.name = name;
-        this.internetGB = internetGB;
-        this.addInfo = addInfo;
-        this.minInNetwork = minInNetwork;
-        this.minOutNetwork = minOutNetwork;
-        this.initialPayment = initialPayment;
-    }
-
-    public DefaultTariff(String name, double internetGB, double minInNetwork, double minOutNetwork, double initialPayment) {
-        this.name = name;
-        this.internetGB = internetGB;
-        this.addInfo = "";
-        this.minInNetwork = minInNetwork;
-        this.minOutNetwork = minOutNetwork;
-        this.initialPayment = initialPayment;
-    }
-
-
-    public double getMonthlyPayment(){
-        if(minInNetwork==POSITIVE_INFINITY) {
+    public DefaultTariff(String name, double minInNetwork, double minOutNetwork, double initialPayment) {
+        super(name, minInNetwork, minOutNetwork, initialPayment);
+        if(super.getMinInNetwork()==Double.POSITIVE_INFINITY) {
             monthlyPayment+=750;
         }else  {
-            monthlyPayment+=minInNetwork*1;
+            monthlyPayment+=super.getMinInNetwork()*1;
         }
 
-        if(minOutNetwork==POSITIVE_INFINITY){
+        if(super.getMinOutNetwork()==Double.POSITIVE_INFINITY){
             monthlyPayment += 1250;
-        } else  {
-            monthlyPayment += minOutNetwork*5;
+        }else  {
+            monthlyPayment += super.getMinOutNetwork()*5;
         }
+    }
 
-        if(internetGB==POSITIVE_INFINITY){
-            monthlyPayment += 1750;
-        }else {
-            monthlyPayment += internetGB * 10;
-        }
+    public double getMonthlyPayment(){
         return monthlyPayment;
     }
 }

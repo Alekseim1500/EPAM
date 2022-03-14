@@ -1,11 +1,18 @@
-abstract public class Tariff1 implements Tariff{
+import java.util.ArrayList;
+
+
+abstract public class AbstractTariff implements Tariff{
     private String name;
-    private double internetGB;
-    private String addInfo;
     private double minInNetwork;
     private double minOutNetwork;
-    private double monthlyPayment;
     private double initialPayment;
+
+    public AbstractTariff(String name, double minInNetwork, double minOutNetwork, double initialPayment) {
+        this.name = name;
+        this.minInNetwork = minInNetwork;
+        this.minOutNetwork = minOutNetwork;
+        this.initialPayment = initialPayment;
+    }
 
     public String getName(){
         return name;
@@ -13,22 +20,6 @@ abstract public class Tariff1 implements Tariff{
 
     public void setName(String name){
         this.name=name;
-    }
-
-    public double getInternetGB(){
-        return internetGB;
-    }
-
-    public void setInternetGB(int internetGB){
-        this.internetGB=internetGB;
-    }
-
-    public String getAddInfo(){
-        return addInfo;
-    }
-
-    public void setAddInfo(String addInfo){
-        this.addInfo=addInfo;
     }
 
     public double getMinInNetwork(){
@@ -47,14 +38,6 @@ abstract public class Tariff1 implements Tariff{
         this.minOutNetwork=minOutNetwork;
     }
 
-    public double getMonthlyPayment(){
-        return monthlyPayment;
-    }
-
-    public void setMonthlyPayment(double monthlyPayment){
-        this.monthlyPayment=monthlyPayment;
-    }
-
     public double getInitialPayment(){
         return initialPayment;
     }
@@ -62,5 +45,7 @@ abstract public class Tariff1 implements Tariff{
     public void setInitialPayment(double initialPayment){
         this.initialPayment=initialPayment;
     }
+
+
 
 }

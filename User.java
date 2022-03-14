@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class User {
     private String name;
     private Date DOB;
-    private String adress;
-    private ArrayList<Tariff> Tariffs;
+    private String address;
+    private ArrayList<Tariff> tariffs;
     private double monthPayment=0;
 
-    public User(String name, Date DOB, String adress) {
+    public User(String name, Date DOB, String address) {
         this.name = name;
         this.DOB = DOB;
-        this.adress = adress;
+        this.address = address;
     }
 
     public String getName() {
@@ -30,28 +30,28 @@ public class User {
         this.DOB = DOB;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public ArrayList<Tariff> getNumbers() {
-        return Tariffs;
+        return tariffs;
     }
 
     public Tariff getNumberById(int index) {
-        return Tariffs.get(index);
+        return tariffs.get(index);
     }
 
     public void addNumber(Tariff number) {
-        Tariffs.add(number);
+        tariffs.add(number);
     }
 
     public void delNumber(int index) {
-        Tariffs.remove(index);
+        tariffs.remove(index);
     }
 
     public void setMonthPayment(double monthPayment) {
@@ -59,12 +59,11 @@ public class User {
     }
 
     public double getMonthPayment(){
-        for(Tariff tariff : Tariffs) {
+        monthPayment=0;
+        for(Tariff tariff : tariffs) {
             monthPayment+=tariff.getMonthlyPayment();
         }
         return monthPayment;
     }
-
-
 
 }

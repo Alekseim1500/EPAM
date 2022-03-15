@@ -71,4 +71,6 @@ public class InternetTariff extends AbstractTariff {
     public double getMonthlyPayment() {
         return monthlyPayment;
     }
+
+
 }

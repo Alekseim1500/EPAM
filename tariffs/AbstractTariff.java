@@ -10,6 +10,7 @@ abstract public class AbstractTariff implements Tariff {
     private double minOutNetwork;
     private double initialPayment;
 
+
     public AbstractTariff(String name, double minInNetwork, double minOutNetwork, double initialPayment) {
         this.name = name;
         this.minInNetwork = minInNetwork;
@@ -49,6 +50,5 @@ abstract public class AbstractTariff implements Tariff {
     public void setInitialPayment(double initialPayment) {
         this.initialPayment = initialPayment;
     }
-
 
 }
